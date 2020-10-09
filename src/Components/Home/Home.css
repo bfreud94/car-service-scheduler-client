@@ -1,0 +1,112 @@
+#carousel {
+	position: absolute;
+	top: 0;
+}
+.carImage {
+	height: 1000px;
+	width: 100%;
+}
+.slideOneHeader {
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+.scheduleImage {
+	height: 750px;
+	width: 800px !important;
+	padding: 100px 0px 100px 0px;
+	margin: 0px 0px 0px 50%;
+}
+.area-three-header {
+	position: relative;
+	text-align: center;
+	top: 200px;
+}
+@media screen and (max-width: 1655px) {
+	#area-one {
+		width: 1675px;
+	}
+	#area-two {
+		width: 1675px;
+	}
+	#area-three {
+		width: 1675px;
+	}
+}
+@media screen and (max-width: 1799px) {
+	.area-three-review-nyt-text {
+		margin: 0px 0px 0px 400px;
+	}
+	.area-three-review-nyt-image {
+		margin: 0px 0px 0px 450px;
+		padding: 0px 0px 200px 0px;
+		width: 800px;
+	}
+	.area-three-review-obama-text {
+		margin: 75px 0px 50px 400px;
+		width: 500px;
+	}
+	.area-three-review-wsj-text {
+		margin: 0px 0px 0px 400px;
+	}
+	.area-three-review-wsj-image {
+		margin: 0px 0px 0px 500px;
+		padding: 0px 0px 200px 0px;
+		width: 800px;
+	}
+}
+@media screen and (min-width: 1800px) {
+	.area-three-review-nyt-text {
+		margin: 0px 0px 0px 580px;
+	}
+	.area-three-review-nyt-image {
+		margin: 0px 0px 0px 600px;
+		padding: 0px 0px 200px 0px;
+		width: 800px;
+	}
+	.area-three-review-obama-text {
+		margin: 75px 0px 50px 600px;
+		width: 500px;
+	}
+	.area-three-review-wsj-text {
+		margin: 0px 0px 0px 500px;
+	}
+	.area-three-review-wsj-image {
+		margin: 0px 0px 0px 600px;
+		padding: 0px 0px 200px 0px;
+		width: 800px;
+	}
+}
+#area-two {
+	background: rgb(20, 20, 20);
+	color: white;
+	height: 33%;
+}
+.area-two-text-wrapper {
+	margin: 200px 0px 0px 200px;
+	position: absolute;
+}
+.area-two-sub-text {
+	margin: 0px 0px 0px 50px;
+}
+.area-two-business {
+	margin: 50px 0px 0px 80px;
+}
+#area-three {
+	background: rgb(158, 200, 125);
+	height: 800px;
+}
+#area-three-carousel {
+	padding: 300px 0px 0px 0px;
+}
+.area-three-review-nyt {
+	display: block;
+}
+.area-three-review-obama {
+	display: flex;
+}
+.area-three-review-wsj {
+	display: block;
+}
