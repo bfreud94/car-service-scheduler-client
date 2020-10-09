@@ -77,7 +77,7 @@ class SpecificAppointments extends Component {
         const { appointments, start, end, page, rowsPerPage } = this.state;
         return (
             <div>
-                <div className='specific-appointments-container'>
+                <div className='specific-appointments-buttons-container'>
                     <h2>Select a date range to see specific appointments</h2>
                     <form onSubmit={(e) => this.submitSpecificAppointments(e)}>
                         <h3>
@@ -91,7 +91,7 @@ class SpecificAppointments extends Component {
                         <button type='submit' className='btn btn-primary'>Submit</button>
                     </form>
                 </div>
-                <div className='schedule-table-container'>
+                <div className='specific-appointments-table-container'>
                     <h1>Here is a list of every upcoming appointment</h1>
                     <TableContainer>
                         <Table id='scheduleTable' className='table table-striped table-bordered' style={{ width: '100%' }}>
