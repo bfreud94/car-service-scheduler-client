@@ -10,7 +10,7 @@ class SpecificAppointments extends Component {
         super();
         this.state = {
             appointments: [],
-            start: moment(new Date()).format('YYYY-MM-DD'),
+            start: moment(new Date()).add(-1, 'years').format('YYYY-MM-DD'),
             end: moment(new Date()).add(7, 'days').format('YYYY-MM-DD'),
             page: 0,
             rowsPerPage: 5

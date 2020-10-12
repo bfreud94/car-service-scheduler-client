@@ -25,7 +25,7 @@ class Schedule extends Component {
 
     createAppointment = () => {
         const appointment = this.getAppointmentData();
-        addAppointment(appointment);
+        this.props.addAppointment(appointment);
     }
 
     getAppointmentData = () => {
@@ -40,7 +40,7 @@ class Schedule extends Component {
 
     createRandomAppointment = () => {
         const randomAppointment = this.createRandomAppointmentData();
-        addAppointment(randomAppointment);
+        this.props.addAppointment(randomAppointment);
     }
 
     createRandomAppointmentData = () => {
@@ -138,6 +138,7 @@ class Schedule extends Component {
 }
 
 Schedule.propTypes = {
+    addAppointment: PropTypes.func.isRequired,
     getFullCalendarJsAppointments: PropTypes.func.isRequired
 };
 
@@ -145,4 +146,4 @@ const mapStateToProps = (state) => ({
     fullCalendarJsAppointments: state.appointments.fullCalendarJsAppointments
 });
 
-export default connect(mapStateToProps, { getFullCalendarJsAppointments })(Schedule);
+export default connect(mapStateToProps, { addAppointment, getFullCalendarJsAppointments })(Schedule);

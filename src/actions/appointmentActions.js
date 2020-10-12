@@ -19,7 +19,7 @@ export const getFullCalendarJsAppointments = () => async (dispatch) => {
     });
 };
 
-export const addAppointment = async (appointment) => {
+export const addAppointment = (appointment) => async (dispatch) => {
     const response = await (await fetch(`${serviceUri}/schedule/scheduleAppointment`, {
         method: 'POST',
         body: JSON.stringify({
@@ -30,8 +30,8 @@ export const addAppointment = async (appointment) => {
             start: appointment.start
         })
     })).json();
-    if (response.updated) {
-        this.getAppointments();
+    if (response.created) {
+        dispatch(getAppointments());
     }
 };
 
