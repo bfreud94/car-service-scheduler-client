@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { GET_APPOINTMENTS, GET_FULL_CALENDAR_JS_APPOINTMENTS, UPDATE_APPOINTMENT, DELETE_APPOINTMENT } from './types';
+import { DELETE_APPOINTMENT, GET_APPOINTMENTS, GET_FULL_CALENDAR_JS_APPOINTMENTS, UPDATE_APPOINTMENT } from './types';
 
 const serviceUri = process.env.NODE_ENV.trim() === 'development' ? 'http://localhost:8080/api' : 'https://car-service-scheduler-server.herokuapp.com/api';
 
@@ -17,6 +17,22 @@ export const getFullCalendarJsAppointments = () => async (dispatch) => {
         type: GET_FULL_CALENDAR_JS_APPOINTMENTS,
         payload: data
     });
+};
+
+export const addAppointment = async (appointment) => {
+    const response = await (await fetch(`${serviceUri}/schedule/scheduleAppointment`, {
+        method: 'POST',
+        body: JSON.stringify({
+            firstName: appointment.firstName,
+            lastName: appointment.lastName,
+            title: appointment.title,
+            severity: appointment.severity,
+            start: appointment.start
+        })
+    })).json();
+    if (response.updated) {
+        this.getAppointments();
+    }
 };
 
 export const updateAppointment = (appointment) => async (dispatch) => {

@@ -4,7 +4,7 @@ import $ from 'jquery';
 import PropTypes from 'prop-types';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import { getFullCalendarJsAppointments } from '../../actions/appointmentActions';
+import { addAppointment, getFullCalendarJsAppointments } from '../../actions/appointmentActions';
 import store from '../../store';
 import './Schedule.css';
 
@@ -25,14 +25,7 @@ class Schedule extends Component {
 
     createAppointment = () => {
         const appointment = this.getAppointmentData();
-        $.ajax({
-            type: 'POST',
-            contentType: 'application/json',
-            url: 'schedule/scheduleAppointment',
-            data: JSON.stringify(appointment),
-            dataType: 'json'
-        });
-        window.location.reload();
+        addAppointment(appointment);
     }
 
     getAppointmentData = () => {
@@ -47,14 +40,7 @@ class Schedule extends Component {
 
     createRandomAppointment = () => {
         const randomAppointment = this.createRandomAppointmentData();
-        $.ajax({
-            type: 'POST',
-            contentType: 'application/json',
-            url: 'schedule/scheduleAppointment',
-            data: JSON.stringify(randomAppointment),
-            dataType: 'json'
-        });
-        window.location.reload();
+        addAppointment(randomAppointment);
     }
 
     createRandomAppointmentData = () => {
@@ -68,7 +54,7 @@ class Schedule extends Component {
     }
 
     createRandomDate = () => {
-        const year = '2019';
+        const year = '2020';
         const month = this.addLeadingZero(Math.floor(Math.random() * 12) + 1);
         const day = this.addLeadingZero(Math.floor(Math.random() * 21) + 1);
         const hour = this.addLeadingZero(Math.floor(Math.random() * 23) + 1);

@@ -42,8 +42,10 @@ class SpecificAppointments extends Component {
         if (parseInt(start.split('-')[0], 10) <= 9999) {
             const response = await getSpecificAppointments(start, end);
             this.setState({
-                appointments: response
+                appointments: response,
+                page: 0
             });
+
         } else {
             // Error message for invalid date
         }
