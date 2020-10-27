@@ -4,7 +4,7 @@ import 'jquery/dist/jquery.min';
 import 'bootstrap/dist/js/bootstrap.min';
 import './Home.css';
 
-export class Home extends Component {
+class Home extends Component {
     render() {
         return (
             <React.Fragment>
